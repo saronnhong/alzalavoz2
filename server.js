@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 
 mongoose
   // for the app to work as a deployed app with mLAB MongoDB provision on Heroku, use:
-   .connect(process.env.MONGODB_URI || 'mongodb://user:password123@ds017678.mlab.com:17678/heroku_55wdzbwp', { useNewUrlParser: true})
+   .connect(process.env.MONGODB_URI || 'mongodb://user:password123@ds035844.mlab.com:35844/heroku_mxr3c7lz', { useNewUrlParser: true})
   // for LOCAL Testing, use:
   // .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/alzaDB', { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected!"))
