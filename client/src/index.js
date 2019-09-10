@@ -4,5 +4,23 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
+
+ReactDOM.render(
+    <Router>
+        <div>
+            <Navbar />
+            <Switch>
+                <Route exact path="/" component={App} />
+                
+                <Route component={App} />
+            </Switch>
+
+
+        </div>
+    </Router>
+    , document.getElementById('root'));
+
 registerServiceWorker();
