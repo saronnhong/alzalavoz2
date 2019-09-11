@@ -60,8 +60,7 @@ class App extends Component {
       }));
   }
   deleteButton = function(id) {
-    API.deleteArticles(id)
-    // .then(this.setState({delete: "gone"}));
+    API.deleteArticles(id);
   }
 
   render() {
@@ -92,9 +91,7 @@ class App extends Component {
           <div className="col-md-6">
             {this.state.articles.map(art => (
               <div data-block={this.state.author} >
-                Title: {art.title} 
-                Author: {art.author}
-                Content: {art.content}
+                {art.title} by: {art.author} 
                 <DeleteBtn data-id={art._id} onClick={()=>this.deleteButton(art._id)}/>
               </div>
               
