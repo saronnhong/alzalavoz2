@@ -20,9 +20,9 @@ class App extends Component {
     this.loadArticles();
     
   }
-  componentDidUpdate(){
-    this.loadArticles();
-  }
+  // componentDidUpdate(){
+  //   this.loadArticles();
+  // }
 
   loadArticles = () => {
     API.getArticles()
@@ -57,10 +57,12 @@ class App extends Component {
         date: "",
         imageUrl: "",
         content: ""
-      }));
+      }))
+      .then(this.loadArticles());
   }
   deleteButton = function(id) {
-    API.deleteArticles(id);
+    API.deleteArticles(id)
+    .then(this.loadArticles());
   }
 
   render() {
