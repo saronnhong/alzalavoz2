@@ -90,7 +90,7 @@ class App extends Component {
           </div>
           <div className="col-md-6">
             {this.state.articles.map(art => (
-              <div data-block={this.state.author} >
+              <div className="articleBlock" data-block={this.state.author} >
                 {art.title} by: {art.author} 
                 <DeleteBtn data-id={art._id} onClick={()=>this.deleteButton(art._id)}/>
               </div>
