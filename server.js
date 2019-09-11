@@ -25,9 +25,9 @@ if (process.env.NODE_ENV === "production") {
 
 mongoose
   // for the app to work as a deployed app with mLAB MongoDB provision on Heroku, use:
-   .connect(process.env.MONGODB_URI || 'mongodb://user:password123@ds035844.mlab.com:35844/heroku_mxr3c7lz', { useNewUrlParser: true})
+  //  .connect(process.env.MONGODB_URI || 'mongodb://user:password123@ds035844.mlab.com:35844/heroku_mxr3c7lz', { useNewUrlParser: true})
   // for LOCAL Testing, use:
-  // .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/alzaDB', { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/alzaDB', { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.error(err));
 // Define API routes here
@@ -37,6 +37,19 @@ app.post('/api/savearticle/:id', function (req, res) {
   db.Article.create(req.body)
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
+});
+app.get('/api/savedarticles', (req, res) => {
+  db.Article.find({})
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+  
+});
+app.delete('/api/deletearticles/:id', (req, res) => {
+  db.Article.findOneAndDelete({ _id: req.params.id})
+    .then(console.log(req.params.id))
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+  
 });
 
 // Send every other request to the React app

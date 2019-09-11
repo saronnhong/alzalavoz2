@@ -3,15 +3,37 @@ import React, { Component } from "react";
 import "./App.css";
 // import axios from 'axios';
 import API from "./utils/API";
+import DeleteBtn from "./components/DeleteBtn";
 
 class App extends Component {
   state = {
-    title: "winds of winter",
-    author: "george RR martin",
-    date: "11",
-    imageUrl: "sansa",
-    content: "arya kills the nights king"
+    title: "",
+    author: "",
+    date: "",
+    imageUrl: "",
+    content: "",
+    articles: [],
+    delete: ""
   };
+
+  componentDidMount() {
+    this.loadArticles();
+    
+  }
+  componentDidUpdate(){
+    this.loadArticles();
+  }
+
+  loadArticles = () => {
+    API.getArticles()
+      .then(res => {
+        console.log(res.data);
+        this.setState({ articles: res.data })
+      })
+
+      .catch(err => console.log(err));
+  };
+
 
   handleInputChange = event => {
     event.preventDefault();
@@ -21,6 +43,7 @@ class App extends Component {
     });
   };
   submitForm = () => {
+    
     API.saveArticles({
       title: this.state.title,
       author: this.state.author,
@@ -28,7 +51,17 @@ class App extends Component {
       imageUrl: this.state.imageUrl,
       content: this.state.content
     })
-      .then(console.log("article has been saved!!"));
+      .then(this.setState({
+        title: "",
+        author: "",
+        date: "",
+        imageUrl: "",
+        content: ""
+      }));
+  }
+  deleteButton = function(id) {
+    API.deleteArticles(id)
+    // .then(this.setState({delete: "gone"}));
   }
 
   render() {
@@ -44,7 +77,7 @@ class App extends Component {
                 <input type="text" className="form-control" placeholder="Author" name="author" value={this.state.author} onChange={this.handleInputChange} />
               </div>
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Date" name="date" value={this.state.date} onChange={this.handleInputChange}/>
+                <input type="text" className="form-control" placeholder="Date" name="date" value={this.state.date} onChange={this.handleInputChange} />
               </div>
               <div className="form-group">
                 <input type="url" className="form-control" placeholder="Image URL" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} />
@@ -53,9 +86,19 @@ class App extends Component {
                 <textarea className="form-control" placeholder="Article Content" rows="8" name="content" value={this.state.content} onChange={this.handleInputChange}></textarea>
               </div>
             </form>
-            <button type="button" className="btn btn-warning" onClick={() => {this.submitForm()}}>Submit</button>
+            <button type="button" className="btn btn-warning" onClick={() => { this.submitForm() }}>Submit</button>
+            
           </div>
           <div className="col-md-6">
+            {this.state.articles.map(art => (
+              <div data-block={this.state.author} >
+                Title: {art.title} 
+                Author: {art.author}
+                Content: {art.content}
+                <DeleteBtn data-id={art._id} onClick={()=>this.deleteButton(art._id)}/>
+              </div>
+              
+            ))}
 
           </div>
         </div>
