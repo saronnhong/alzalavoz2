@@ -70,19 +70,19 @@ class App extends Component {
           <div className="col-md-6">
             <form>
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Title" name="title" value={this.state.title} onChange={this.handleInputChange} />
+                <input type="text" className="form-control" placeholder="Title (required)" name="title" value={this.state.title} onChange={this.handleInputChange} />
               </div>
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Author" name="author" value={this.state.author} onChange={this.handleInputChange} />
+                <input type="text" className="form-control" placeholder="Author (required)" name="author" value={this.state.author} onChange={this.handleInputChange} />
               </div>
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Date" name="date" value={this.state.date} onChange={this.handleInputChange} />
+                <input type="text" className="form-control" placeholder="Date (required)" name="date" value={this.state.date} onChange={this.handleInputChange} />
               </div>
               <div className="form-group">
-                <input type="url" className="form-control" placeholder="Image URL" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} />
+                <input type="url" className="form-control" placeholder="Image URL (required)" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} />
               </div>
               <div className="form-group">
-                <textarea className="form-control" placeholder="Article Content" rows="8" name="content" value={this.state.content} onChange={this.handleInputChange}></textarea>
+                <textarea className="form-control" placeholder="Article Content (required)" rows="8" name="content" value={this.state.content} onChange={this.handleInputChange}></textarea>
               </div>
             </form>
             <button type="button" className="btn btn-warning" onClick={() => { this.submitForm() }}>Submit</button>
@@ -91,7 +91,7 @@ class App extends Component {
           <div className="col-md-6">
             {this.state.articles.map(art => (
               <div data-block={this.state.author} >
-                {art.title} by: {art.author} 
+                {art.title} by: {art.author} 
                 <DeleteBtn data-id={art._id} onClick={()=>this.deleteButton(art._id)}/>
               </div>
               
