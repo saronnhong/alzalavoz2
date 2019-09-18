@@ -1,0 +1,27 @@
+.articleSection {
+    background: rgb(0,0,0, .7);
+    /* opacity: .7; */
+    height: 100vh;
+    color: rgb(255, 255, 255);
+    overflow: scroll;
+    padding: 2%;
+    
+    
+    
+}
+
+.artTitle{
+    margin-top: 110px;
+    
+}
+.artBody{
+    /* padding-bottom: 30px; */
+    color: rgb(255, 255, 255, .8);
+}
+.storiesPage {
+    background-image: url(https://cdn.pixabay.com/photo/2014/09/07/21/52/urban-438393_1280.jpg);
+    /* background-size: 100vh; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}

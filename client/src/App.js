@@ -18,7 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     this.loadArticles();
-    
+
   }
   // componentDidUpdate(){
   //   this.loadArticles();
@@ -43,7 +43,7 @@ class App extends Component {
     });
   };
   submitForm = () => {
-    
+
     API.saveArticles({
       title: this.state.title,
       author: this.state.author,
@@ -60,9 +60,10 @@ class App extends Component {
       }))
       .then(this.loadArticles());
   }
-  deleteButton = function(id) {
+
+  deleteButton = function (id) {
     API.deleteArticles(id)
-    .then(this.loadArticles());
+      .then(this.loadArticles());
   }
 
   render() {
@@ -88,15 +89,15 @@ class App extends Component {
               </div>
             </form>
             <button type="button" className="btn btn-warning" onClick={() => { this.submitForm() }}>Submit</button>
-            
+
           </div>
           <div className="col-md-6">
             {this.state.articles.map(art => (
               <div className="articleBlock" data-block={this.state.author} >
-                {art.title} by: {art.author} 
-                <DeleteBtn data-id={art._id} onClick={()=>this.deleteButton(art._id)}/>
+                {art.title} by: {art.author}
+                <DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} />
               </div>
-              
+
             ))}
 
           </div>

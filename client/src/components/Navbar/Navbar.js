@@ -16,8 +16,8 @@ function Navbar(props) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <Link smooth to="/about">
-                                <div className="navMenu" id="navAbout" data-toggle="collapse" data-target=".navbar-collapse.show">Stories</div>
+                            <Link smooth to="/stories">
+                                <div className="navMenu" id="stories" data-toggle="collapse" data-target=".navbar-collapse.show">Stories</div>
                             </Link>
                         </li>
                         <li class="nav-item">

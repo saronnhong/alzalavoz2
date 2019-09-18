@@ -8,7 +8,7 @@
     text-decoration: none;
 } */
 
-#navAbout, #navPort, #navContact{
+#navAbout, #navPort, #navContact, #stories{
     
     margin: 0 10px;
     line-height: 50px;
@@ -20,7 +20,7 @@
     
 }
 
-#navAbout::after, #navPort::after, #navContact::after {
+#navAbout::after, #navPort::after, #navContact::after, #stories::after {
     content: " ";
     position: absolute;
     width: 100%;
@@ -35,7 +35,7 @@
     transition: all 0.3s ease-in-out 0s;
     
 }
-#navAbout:hover::after, #navPort:hover::after, #navContact:hover::after  {
+#navAbout:hover::after, #navPort:hover::after, #navContact:hover::after, #stories:hover::after  {
     /* content: ' ';
     background-color: aquamarine;
     padding: 5px;
