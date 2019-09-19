@@ -17,6 +17,7 @@
 .artBody{
     /* padding-bottom: 30px; */
     color: rgb(255, 255, 255, .8);
+    white-space: pre-wrap;
 }
 .storiesPage {
     /* background-image: url(https://cdn.pixabay.com/photo/2014/09/07/21/52/urban-438393_1280.jpg); */

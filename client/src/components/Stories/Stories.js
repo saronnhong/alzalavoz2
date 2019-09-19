@@ -53,7 +53,7 @@ class Stories extends Component {
             <div className="col-md-6 articleSection">
               <h1 className="artTitle">{this.state.articles.title} </h1>
               <h6>by {this.state.articles.author} </h6>
-              <h10 className="artBody">{this.state.articles.content}</h10>
+              <blockquote className="artBody">{this.state.articles.content}</blockquote>
             </div>
           </div>
         </div>

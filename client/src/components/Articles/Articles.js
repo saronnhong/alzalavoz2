@@ -37,20 +37,20 @@ class Articles extends Component {
       <div className="homePage">
         <div className="container">
           <div className="row firstRow">
-          {this.state.articles.map(art => 
-            <div className="col-md-6">
-              <Link to={"/stories/" + art._id} >
-              <div className="imageContainer">
-                <img className="image1" height="300px" src={art.imageUrl} />
-                <div className="postTitle">{art.author}</div>
+            {this.state.articles.map(art =>
+              <div className="col-md-6">
+                <Link to={"/stories/" + art._id} >
+                  <div className="imageContainer">
+                    <img className="image1" height="300px" src={art.imageUrl} />
+                    <div className="postTitle">{art.author}</div>
+                  </div>
+                </Link>
               </div>
-              </Link>
-            </div>
-          )}
-           
-            
+            )}
+
+
           </div>
-          
+
         </div>
 
       </div>
