@@ -1,0 +1,51 @@
+.cd-section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 90vh;
+  }
+  
+  .cd-section--bg-fixed {
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+  
+  /* backgrounds */
+  .cd-section:nth-child(1) {
+    background-image: url("https://cdn.pixabay.com/photo/2019/08/23/12/02/niederhorn-4425606_1280.jpg");
+  }
+  
+  .cd-section:nth-child(2) {
+    background-color: rgb(115,143,211);
+  }
+  
+  .cd-section:nth-child(3) {
+    /* background image here */
+    background-image: url("https://cdn.pixabay.com/photo/2019/09/17/02/38/sa-pa-4482349_1280.jpg");
+  }
+  .cd-section:nth-child(4) {
+    background-color: rgb(103,169,188);
+  }
+
+  .cd-section:nth-child(5) {
+    background-image: url("https://cdn.pixabay.com/photo/2015/09/05/04/27/milky-way-923738_1280.jpg");
+  }
+  
+  .cd-section:nth-child(6) {
+    background-color: rgb(123,193,214);
+  }
+  
+  .cd-section:nth-child(7) {
+    /* background image here */
+    background-image: url("https://cdn.pixabay.com/photo/2015/11/04/20/59/milky-way-1023340_1280.jpg");
+  }
+  .cd-section:nth-child(8) {
+    background-color: rgb(63,56,36);
+  }
+  .cd-section:nth-child(9) {
+    /* background image here */
+    background-image: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg");
+  }
+  .cd-section:nth-child(10) {
+    background-color: rgb(181,124,87);
+  }
