@@ -49,7 +49,8 @@ class Stories extends Component {
 
           </div>
           <div className="col-md-6 articleSection">
-            <h1 className="artTitle">{this.state.articles.title}Over the past 10 years, at least 82 journalists have been killed in Mexico for exercising their profession. Miroslava Breach was one of them.</h1>
+            <h1 className="artTitle">{this.state.articles.title} </h1>
+            <h6>by {this.state.articles.author} </h6>
             <h10 className="artBody">{this.state.articles.content}</h10>
           </div>
         </div>

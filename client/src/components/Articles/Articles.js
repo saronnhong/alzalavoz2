@@ -6,7 +6,7 @@ import "./style.css";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-class Homepage extends Component {
+class Articles extends Component {
   state = {
     title: "",
     author: "",
@@ -58,4 +58,4 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage;
+export default Articles;
