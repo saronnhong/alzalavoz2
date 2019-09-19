@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { HashLink as Link } from 'react-router-hash-link';
-import Stories from "../Stories";
 import API from "../../utils/API";
 import "./style.css";
 
-// The ...props means, spread all of the passed props onto this element
-// That way we don't have to define them all individually
 class Articles extends Component {
   state = {
     title: "",
@@ -47,12 +44,8 @@ class Articles extends Component {
                 </Link>
               </div>
             )}
-
-
           </div>
-
         </div>
-
       </div>
     );
   }

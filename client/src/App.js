@@ -21,11 +21,13 @@ class App extends Component {
 
   componentDidMount() {
     this.loadArticles();
+    var date = new Date().getDate(); //Current Date
+    var month = new Date().getMonth() + 1; //Current Month
+    var year = new Date().getFullYear(); //Current Year
+    this.setState({date: month + '/' + date + '/' + year})
+    console.log(date);
 
   }
-  // componentDidUpdate(){
-  //   this.loadArticles();
-  // }
 
   loadArticles = () => {
     API.getArticles()
