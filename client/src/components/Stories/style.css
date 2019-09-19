@@ -19,7 +19,7 @@
     color: rgb(255, 255, 255, .8);
 }
 .storiesPage {
-    background-image: url(https://cdn.pixabay.com/photo/2014/09/07/21/52/urban-438393_1280.jpg);
+    /* background-image: url(https://cdn.pixabay.com/photo/2014/09/07/21/52/urban-438393_1280.jpg); */
     /* background-size: 100vh; */
     background-repeat: no-repeat;
     background-size: cover;
