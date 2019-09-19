@@ -1,0 +1,12 @@
+.edit-btn {
+    float: right;
+    color: #e74944;
+    margin-right: 10px;
+  }
+
+  .edit-btn:hover{
+    color: yellow;
+    transition-duration: 1s;
+    transform: rotate(180degrees);
+  }
+  

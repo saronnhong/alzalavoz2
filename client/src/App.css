@@ -34,3 +34,7 @@
   padding: 1em;
   margin: 5px;
 }
+
+#updateBtn, #submitBtn {
+  margin: 5px;
+}

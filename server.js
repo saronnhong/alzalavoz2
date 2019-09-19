@@ -42,28 +42,36 @@ app.get('/api/savedarticles', (req, res) => {
   db.Article.find({})
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
-  
+
 });
 app.get('/api/savedarticles/:id', (req, res) => {
-  db.Article.findOne({_id: req.params.id})
+  db.Article.findOne({ _id: req.params.id })
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
-  
+
 });
 app.get('/stories/api/savedarticles/:id', (req, res) => {
-  db.Article.findOne({_id: req.params.id})
+  db.Article.findOne({ _id: req.params.id })
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
-  
+
 });
 app.delete('/api/deletearticles/:id', (req, res) => {
-  db.Article.findOneAndDelete({ _id: req.params.id})
+  db.Article.findOneAndDelete({ _id: req.params.id })
     .then(console.log(req.params.id))
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
-  
-});
 
+});
+app.put('/api/updatearticles/:id', (req, res) => {
+  db.Article.findByIdAndUpdate(
+    req.params.id, req.body, { new: true }, function (err, doc) {
+      if (err) return res.send(500, { error: err })
+
+    })
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+});
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
