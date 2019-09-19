@@ -5,6 +5,9 @@ export default {
   getArticles: function() {
     return axios.get("/api/savedarticles");
   },
+  getArticlesById: function(id){
+    return axios.get("api/savedarticles/" + id);
+  },
   // Gets all saved books
   // getSavedArticles: function() {
   //   return axios.get("/api/books");

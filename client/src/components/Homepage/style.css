@@ -1,0 +1,17 @@
+.firstRow{
+    margin-top: 160px;
+}
+
+.image1{
+    position: relative;
+}
+.postTitle{
+    font-size: 28px;
+    position: relative;
+    bottom: 70px;
+    left: 30%;
+    background: white;
+    padding: 10px;
+    text-align: right;
+    display: inline-block
+}

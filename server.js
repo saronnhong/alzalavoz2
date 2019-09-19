@@ -44,6 +44,18 @@ app.get('/api/savedarticles', (req, res) => {
     .catch(err => res.status(400).json(err));
   
 });
+app.get('/api/savedarticles/:id', (req, res) => {
+  db.Article.findOne({_id: req.params.id})
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+  
+});
+app.get('/stories/api/savedarticles/:id', (req, res) => {
+  db.Article.findOne({_id: req.params.id})
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+  
+});
 app.delete('/api/deletearticles/:id', (req, res) => {
   db.Article.findOneAndDelete({ _id: req.params.id})
     .then(console.log(req.params.id))
