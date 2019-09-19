@@ -42,7 +42,7 @@ class Articles extends Component {
                 <Link to={"/stories/" + art._id} >
                   <div className="imageContainer">
                     <img className="image1" height="300px" src={art.imageUrl} />
-                    <div className="postTitle">{art.author}</div>
+                    <div className="postTitle">{art.title}</div>
                   </div>
                 </Link>
               </div>
