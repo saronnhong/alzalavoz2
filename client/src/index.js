@@ -15,10 +15,10 @@ ReactDOM.render(
         <div>
             <Navbar />
             <Switch>
-                <Route exact path="/" component={App} />
+                <Route exact path="/" component={Homepage} />
                 <Route path="/stories/:id" component={Stories} />
-                <Route exact path="/homepage" component={Homepage} />
-                <Route component={App} />
+                <Route exact path="/admin" component={App} />
+                <Route component={Homepage} />
             </Switch>
 
 
@@ -26,4 +26,4 @@ ReactDOM.render(
     </Router>
     , document.getElementById('root'));
 
-registerServiceWorker();
+// registerServiceWorker();

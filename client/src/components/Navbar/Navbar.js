@@ -7,7 +7,7 @@ function Navbar(props) {
     return (
         <div className="navTop">
             <nav className="navbar navbar-dark bg-dark fixed-top navbar-expand-sm" id="nav1">
-                <Link smooth to="/">
+                <Link smooth to="/admin">
                     <div className="navbar-brand" > Alza La Voz</div>
                 </Link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@ function Navbar(props) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <Link smooth to="/homepage">
+                            <Link smooth to="/">
                                 <div className="navMenu" id="stories" data-toggle="collapse" data-target=".navbar-collapse.show">Stories</div>
                             </Link>
                         </li>
