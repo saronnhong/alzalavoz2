@@ -22,7 +22,8 @@ const articleSchema = new Schema({
     contentEn4: { type: String},
     contentEsp4: { type: String},
     contentEn5: { type: String},
-    contentEsp5: { type: String}
+    contentEsp5: { type: String},
+    template: { type: String, required: true },
 
 });
 

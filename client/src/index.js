@@ -17,8 +17,8 @@ ReactDOM.render(
             <Navbar />
             <Switch>
                 <Route exact path="/" component={Articles} />
-                <Route path="/stories/:id" component={Stories} />
-                <Route path="/stories2" component={Stories2} />
+                <Route path="/stories1/:id" component={Stories} />
+                <Route path="/stories2/:id" component={Stories2} />
                 <Route exact path="/admin" component={App} />
                 <Route component={Articles} />
             </Switch>

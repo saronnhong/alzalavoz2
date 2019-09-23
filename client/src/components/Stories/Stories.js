@@ -5,14 +5,30 @@ import "./style.css";
 
 class Stories extends Component {
   state = {
-    title: "",
+    titleEn: "",
+    titleEsp: "",
     author: "",
     date: "",
-    imageUrl: "",
-    content: "",
+    imageUrl1: "",
+    imageUrl2: "",
+    imageUrl3: "",
+    imageUrl4: "",
+    imageUrl5: "",
+    contentEn1: "",
+    contentEsp1: "",
+    contentEn2: "",
+    contentEsp2: "",
+    contentEn3: "",
+    contentEsp3: "",
+    contentEn4: "",
+    contentEsp4: "",
+    contentEn5: "",
+    contentEsp5: "",
     articles: [],
     delete: "",
-    id: ""
+    id: "",
+    template: "1"
+    // showUpdateBtn: false
   };
 
   componentDidMount() {
@@ -23,15 +39,16 @@ class Stories extends Component {
   loadArticles = () => {
     API.getArticlesById(this.state.id)
       .then(res => {
-        // console.log(res.data);
+        console.log(res);
         this.setState({ articles: res.data });
         // console.log(this.props.match.params.id);
+        console.log(this.state);
       })
       .catch(err => console.log(err));
   };
   render() {
     var divStyle = {
-      backgroundImage: 'url(' + this.state.articles.imageUrl + ')'
+      backgroundImage: 'url(' + this.state.articles.imageUrl1 + ')'
     }
 
     return (
@@ -41,9 +58,9 @@ class Stories extends Component {
             <div className="col-md-6">
             </div>
             <div className="col-md-6 articleSection">
-              <h1 className="artTitle">{this.state.articles.title} </h1>
+              <h1 className="artTitle">{this.state.articles.titleEn} </h1>
               <h6>by {this.state.articles.author} </h6>
-              <div className="artBody">{this.state.articles.content}</div>
+              <div className="artBody">{this.state.articles.contentEn1}</div>
             </div>
           </div>
         </div>

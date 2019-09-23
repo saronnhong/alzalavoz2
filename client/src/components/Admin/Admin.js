@@ -80,7 +80,8 @@ class Admin extends Component {
       contentEn4: this.state.contentEn4,
       contentEsp4: this.state.contentEsp4,
       contentEn5: this.state.contentEn5,
-      contentEsp5: this.state.contentEsp4
+      contentEsp5: this.state.contentEsp4,
+      template: this.state.template
 
     })
       .then(this.setState({
@@ -111,11 +112,6 @@ class Admin extends Component {
 
     API.updateArticles({
       _id: this.state.id,
-      // title: this.state.title,
-      // author: this.state.author,
-      // date: this.state.date,
-      // imageUrl1: this.state.imageUrl1,
-      // content: this.state.content
       titleEn: this.state.titleEn,
       titleEsp: this.state.titleEsp,
       author: this.state.author,
@@ -134,7 +130,8 @@ class Admin extends Component {
       contentEn4: this.state.contentEn4,
       contentEsp4: this.state.contentEsp4,
       contentEn5: this.state.contentEn5,
-      contentEsp5: this.state.contentEsp4
+      contentEsp5: this.state.contentEsp4,
+      template: this.state.template
     })
       .then(this.setState({
         titleEn: "",
@@ -195,6 +192,7 @@ class Admin extends Component {
         contentEn5: res.data.contentEn5,
         contentEsp5: res.data.contentEsp4,
         id: res.data._id,
+        template: res.data.template,
         showUpdateBtn: true
       }))
       .then(this.loadArticles());

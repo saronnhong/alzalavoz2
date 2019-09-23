@@ -2,7 +2,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    min-height: 90vh;
+    /* min-height: 90vh; */
+    padding: 4%;
+
+    
   }
   
   .cd-section--bg-fixed {
@@ -16,7 +19,7 @@
   }
   
   .cd-section:nth-child(2) {
-    background-color: rgb(115,143,211);
+    background-color: rgb(245,245,245);
   }
   
   .cd-section:nth-child(3) {
@@ -24,7 +27,7 @@
     background-image: url("https://cdn.pixabay.com/photo/2019/09/17/02/38/sa-pa-4482349_1280.jpg");
   }
   .cd-section:nth-child(4) {
-    background-color: rgb(103,169,188);
+    background-color: rgb(245,245,245);
   }
 
   .cd-section:nth-child(5) {
@@ -32,7 +35,7 @@
   }
   
   .cd-section:nth-child(6) {
-    background-color: rgb(123,193,214);
+    background-color: rgb(245,245,245);
   }
   
   .cd-section:nth-child(7) {
@@ -40,12 +43,17 @@
     background-image: url("https://cdn.pixabay.com/photo/2014/02/27/16/10/spring-276014_1280.jpg");
   }
   .cd-section:nth-child(8) {
-    background-color: rgb(63,56,36);
+    background-color: rgb(245,245,245);
   }
   .cd-section:nth-child(9) {
     /* background image here */
     background-image: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg");
   }
   .cd-section:nth-child(10) {
-    background-color: rgb(181,124,87);
+    background-color: rgb(245,245,245);
+  }
+
+  h5{
+    line-height: 1.5;
+    padding-top: .5em;
   }

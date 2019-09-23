@@ -5,14 +5,30 @@ import "./style.css";
 
 class Articles extends Component {
   state = {
-    title: "",
+    titleEn: "",
+    titleEsp: "",
     author: "",
     date: "",
-    imageUrl: "",
-    content: "",
+    imageUrl1: "",
+    imageUrl2: "",
+    imageUrl3: "",
+    imageUrl4: "",
+    imageUrl5: "",
+    contentEn1: "",
+    contentEsp1: "",
+    contentEn2: "",
+    contentEsp2: "",
+    contentEn3: "",
+    contentEsp3: "",
+    contentEn4: "",
+    contentEsp4: "",
+    contentEn5: "",
+    contentEsp5: "",
     articles: [],
     delete: "",
-    id: ""
+    id: "",
+    template: "1"
+    // showUpdateBtn: false
   };
 
   componentDidMount() {
@@ -36,10 +52,10 @@ class Articles extends Component {
           <div className="row firstRow">
             {this.state.articles.map(art =>
               <div className="col-md-6">
-                <Link to={"/stories/" + art._id} >
+                <Link to={"/stories" + art.template + "/" + art._id} >
                   <div className="imageContainer">
-                    <img className="image1" height="300px" src={art.imageUrl} />
-                    <div className="postTitle">{art.title}</div>
+                    <img data-template={art.template} className="image1" height="300px" src={art.imageUrl1} />
+                    <div className="postTitle">{art.titleEn}</div>
                   </div>
                 </Link>
               </div>
