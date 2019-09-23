@@ -4,6 +4,8 @@
     background-position: center center;
     /* min-height: 90vh; */
     padding: 4%;
+    color: rgb(70,70,70);
+    
 
     
   }
@@ -20,6 +22,8 @@
   
   .cd-section:nth-child(2) {
     background-color: rgb(245,245,245);
+    
+    
   }
   
   .cd-section:nth-child(3) {
@@ -57,3 +61,5 @@
     line-height: 1.5;
     padding-top: .5em;
   }
+
+  
