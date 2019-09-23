@@ -15,6 +15,7 @@ class Admin extends Component {
     imageUrl3: "",
     imageUrl4: "",
     imageUrl5: "",
+    videoUrl: "",
     contentEn1: "",
     contentEsp1: "",
     contentEn2: "",
@@ -71,6 +72,7 @@ class Admin extends Component {
       imageUrl3: this.state.imageUrl3,
       imageUrl4: this.state.imageUrl4,
       imageUrl5: this.state.imageUrl5,
+      videoUrl: this.state.videoUrl,
       contentEn1: this.state.contentEn1,
       contentEsp1: this.state.contentEsp1,
       contentEn2: this.state.contentEn2,
@@ -94,6 +96,7 @@ class Admin extends Component {
         imageUrl3: "",
         imageUrl4: "",
         imageUrl5: "",
+        videoUrl: "",
         contentEn1: "",
         contentEsp1: "",
         contentEn2: "",
@@ -121,6 +124,7 @@ class Admin extends Component {
       imageUrl3: this.state.imageUrl3,
       imageUrl4: this.state.imageUrl4,
       imageUrl5: this.state.imageUrl5,
+      videoUrl: this.state.videoUrl,
       contentEn1: this.state.contentEn1,
       contentEsp1: this.state.contentEsp1,
       contentEn2: this.state.contentEn2,
@@ -143,6 +147,7 @@ class Admin extends Component {
         imageUrl3: "",
         imageUrl4: "",
         imageUrl5: "",
+        videoUrl: "",
         contentEn1: "",
         contentEsp1: "",
         contentEn2: "",
@@ -153,7 +158,6 @@ class Admin extends Component {
         contentEsp4: "",
         contentEn5: "",
         contentEsp5: "",
-
         showUpdateBtn: false
       }))
       .then(this.loadArticles());
@@ -166,12 +170,6 @@ class Admin extends Component {
   editButton = function (id) {
     API.getArticlesById(id)
       .then((res) => this.setState({
-        // titleEn: res.data.titleEn,
-        // author: res.data.author,
-        // date: res.data.date,
-        // imageUrl1: res.data.imageUrl1,
-        // contentEn1: res.data.contentEn1,
-
         titleEn: res.data.titleEn,
         titleEsp: res.data.titleEsp,
         author: res.data.author,
@@ -181,6 +179,7 @@ class Admin extends Component {
         imageUrl3: res.data.imageUrl3,
         imageUrl4: res.data.imageUrl4,
         imageUrl5: res.data.imageUrl5,
+        videoUrl: res.data.videoUrl,
         contentEn1: res.data.contentEn1,
         contentEsp1: res.data.contentEsp1,
         contentEn2: res.data.contentEn2,
@@ -229,8 +228,6 @@ class Admin extends Component {
               <div className="form-group">
                 <input type="url" className="form-control" placeholder="Image URL*" name="imageUrl1" value={this.state.imageUrl1} onChange={this.handleInputChange} />
               </div>
-
-
               <div className="form-group">
                 {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 2" name="imageUrl2" value={this.state.imageUrl2} onChange={this.handleInputChange} /> : null}
               </div>
@@ -243,7 +240,9 @@ class Admin extends Component {
               <div className="form-group">
                 {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 5" name="imageUrl5" value={this.state.imageUrl5} onChange={this.handleInputChange} /> : null}
               </div>
-
+              <div className="form-group">
+                {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Video Url" name="videoUrl" value={this.state.videoUrl} onChange={this.handleInputChange} /> : null}
+              </div>
               <div className="form-group">
                 <textarea className="form-control" placeholder="Content [en]*" rows="8" name="contentEn1" value={this.state.contentEn1} onChange={this.handleInputChange}></textarea>
               </div>

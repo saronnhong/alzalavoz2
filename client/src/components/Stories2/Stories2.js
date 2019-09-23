@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 import API from "../../utils/API";
+import ReactPlayer from 'react-player'
 import "./style.css";
 
 class Stories2 extends Component {
@@ -14,6 +15,7 @@ class Stories2 extends Component {
     imageUrl3: "",
     imageUrl4: "",
     imageUrl5: "",
+    videoUrl: "",
     contentEn1: "",
     contentEsp1: "",
     contentEn2: "",
@@ -51,7 +53,8 @@ class Stories2 extends Component {
           contentEn4: res.data.contentEn4,
           contentEsp4: res.data.contentEsp4,
           contentEn5: res.data.contentEn5,
-          contentEsp5: res.data.contentEsp5
+          contentEsp5: res.data.contentEsp5,
+          videoUrl: res.data.videoUrl
         });
         // console.log(this.props.match.params.id);
         console.log(this.state);
@@ -101,6 +104,7 @@ class Stories2 extends Component {
             <section className="cd-section">
 
               <div className="container">
+                <ReactPlayer url={this.state.videoUrl} />
                 <h5>{this.state.articles.contentEn2}</h5>
               </div>
             </section>
@@ -145,8 +149,9 @@ class Stories2 extends Component {
             </section>
 
             <section className="cd-section">
-              <div className="container">
+              <div className="container" >
                 <h5>{this.state.articles.contentEn5}</h5>
+
               </div>
             </section>
           </div>

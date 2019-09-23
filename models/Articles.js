@@ -4,17 +4,17 @@ const Schema = mongoose.Schema;
 const articleSchema = new Schema({
     
     titleEn: { type: String, required: true },
-    titleEsp: { type: String},
-    author: { type: String},
-    date: { type: String},
-    imageUrl1: { type: String},
-    contentEn1: { type: String},
-    contentEsp1: { type: String},
-    template: { type: String},
+    titleEsp: { type: String, required: true },
+    author: { type: String, required: true },
+    date: { type: String, required: true },
+    imageUrl1: { type: String, required: true },
     imageUrl2: { type: String},
     imageUrl3: { type: String},
     imageUrl4: { type: String},
     imageUrl5: { type: String},
+    videoUrl: { type: String },
+    contentEn1: { type: String, required: true },
+    contentEsp1: { type: String, required: true },
     contentEn2: { type: String},
     contentEsp2: { type: String},
     contentEn3: { type: String},
@@ -23,7 +23,7 @@ const articleSchema = new Schema({
     contentEsp4: { type: String},
     contentEn5: { type: String},
     contentEsp5: { type: String},
-    template: { type: String, required: true },
+    template: { type: String, required: true }
 
 });
 
