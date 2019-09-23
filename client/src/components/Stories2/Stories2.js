@@ -40,7 +40,19 @@ class Stories2 extends Component {
       .then(res => {
         console.log(res.data);
 
-        this.setState({ articles: res.data });
+        this.setState({
+          articles: res.data,
+          contentEn1: res.data.contentEn1,
+          contentEsp1: res.data.contentEsp1,
+          contentEn2: res.data.contentEn2,
+          contentEsp2: res.data.contentEsp2,
+          contentEn3: res.data.contentEn3,
+          contentEsp3: res.data.contentEsp3,
+          contentEn4: res.data.contentEn4,
+          contentEsp4: res.data.contentEsp4,
+          contentEn5: res.data.contentEn5,
+          contentEsp5: res.data.contentEsp5
+        });
         // console.log(this.props.match.params.id);
         console.log(this.state);
       })
@@ -64,13 +76,13 @@ class Stories2 extends Component {
     }
 
     return (
-      <div  className="stories2Page">
+      <div className="stories2Page">
         <section className="cd-section cd-section--bg-fixed" style={divStyle1}>
-          {/* <!-- section content here --> */}
+
         </section>
 
         <section className="cd-section">
-          {/* <!-- section content here --> */}
+
           <div className="container">
             <h1>{this.state.articles.titleEn}</h1>
             <h7>by {this.state.articles.author}</h7>
@@ -79,45 +91,66 @@ class Stories2 extends Component {
           </div>
 
         </section>
-        <section className="cd-section cd-section--bg-fixed" style={divStyle2}>
-          {/* <!-- section content here --> */}
-        </section>
 
-        <section className="cd-section">
-          {/* <!-- section content here --> */}
-          <div className="container">
-            <h5>{this.state.articles.contentEn2}</h5>
-          </div>
-        </section>
-        <section className="cd-section cd-section--bg-fixed" style={divStyle3}>
-          {/* <!-- section content here --> */}
-        </section>
+        {this.state.contentEn2.length && this.state.contentEsp2.length !== 0 ?
+          <div>
+            <section className="cd-section cd-section--bg-fixed" style={divStyle2}>
 
-        <section className="cd-section" >
-          {/* <!-- section content here --> */}
-          <div className="container">
-            <h5>{this.state.articles.contentEn3}</h5>
-          </div>
-        </section>
-        <section className="cd-section cd-section--bg-fixed" style={divStyle4}>
-          {/* <!-- section content here --> */}
-        </section>
+            </section>
 
-        <section className="cd-section">
-          {/* <!-- section content here --> */}
-          <div className="container" >
-            <h5>{this.state.articles.contentEn4}</h5>
-          </div>
-        </section>
-        <section className="cd-section cd-section--bg-fixed" style={divStyle5}>
-          {/* <!-- section content here --> */}
-        </section>
+            <section className="cd-section">
 
-        <section className="cd-section">
-          <div className="container">
-            <h5>{this.state.articles.contentEn5}</h5>
+              <div className="container">
+                <h5>{this.state.articles.contentEn2}</h5>
+              </div>
+            </section>
           </div>
-        </section>
+          : null}
+
+        {this.state.contentEn3.length && this.state.contentEsp3.length !== 0 ?
+          <div>
+            <section className="cd-section cd-section--bg-fixed" style={divStyle3}>
+
+            </section>
+
+            <section className="cd-section" >
+
+              <div className="container">
+                <h5>{this.state.articles.contentEn3}</h5>
+              </div>
+            </section>
+          </div>
+          : null}
+
+        {this.state.contentEn4.length && this.state.contentEsp4.length !== 0 ?
+          <div>
+            <section className="cd-section cd-section--bg-fixed" style={divStyle4}>
+
+            </section>
+
+            <section className="cd-section">
+              <div className="container" >
+                <h5>{this.state.articles.contentEn4}</h5>
+              </div>
+            </section>
+          </div>
+          : null}
+
+
+
+        {this.state.contentEn5.length && this.state.contentEsp5.length !== 0 ?
+          <div>
+            <section className="cd-section cd-section--bg-fixed" style={divStyle5}>
+
+            </section>
+
+            <section className="cd-section">
+              <div className="container">
+                <h5>{this.state.articles.contentEn5}</h5>
+              </div>
+            </section>
+          </div>
+          : null}
       </div>
     );
   }
