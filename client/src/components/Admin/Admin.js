@@ -278,16 +278,21 @@ class Admin extends Component {
             {this.state.showUpdateBtn ? <button type="button" id="updateBtn" className="btn btn-success" onClick={() => { this.updateForm() }}>Update</button> : null}
           </div>
           <div className="col-md-6">
-            {this.state.articles.map(art => (
-              <div className="articleBlock" data-block={this.state.author} >
-                {art.titleEn} by: {art.author}
+            <ul className="list-group">
+              {this.state.articles.map(art => (
+                // <div className="articleBlock" data-block={this.state.author} >
+                //   {art.titleEn} by: {art.author}
 
-                <DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} />
-                <EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} />
-              </div>
-
-            ))}
-
+                //   <DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} />
+                //   <EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} />
+                // </div>
+                <li className="list-group-item d-flex justify-content-between align-items-center articleBlock" data-block={this.state.author}>
+                  {art.titleEn} by: {art.author} 
+                  <span className="badge badge-primary editBtn hvr-pulse"><EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} /></span>
+                  <span className="badge badge-primary editBtn hvr-pulse"><DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} /></span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

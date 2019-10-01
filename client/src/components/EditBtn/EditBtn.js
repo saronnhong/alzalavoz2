@@ -6,7 +6,7 @@ import "./style.css";
 function EditBtn(props) {
   return (
     <span className="edit-btn" {...props} role="button" tabIndex="0">
-      <i class="fas fa-edit"></i>
+      Edit
     </span>
   );
 }

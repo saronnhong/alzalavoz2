@@ -1,11 +1,9 @@
 .delete-btn {
     float: right;
-    color: #e74944;
+    color: white;
+    padding: 5px;
   }
 
-  .delete-btn:hover{
-    color: yellow;
-    transition-duration: 1s;
-    transform: rotate(180degrees);
-  }
+ 
   
+ 
