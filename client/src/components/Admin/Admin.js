@@ -280,16 +280,15 @@ class Admin extends Component {
           <div className="col-md-6">
             <ul className="list-group">
               {this.state.articles.map(art => (
-                // <div className="articleBlock" data-block={this.state.author} >
-                //   {art.titleEn} by: {art.author}
-
-                //   <DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} />
-                //   <EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} />
-                // </div>
                 <li className="list-group-item d-flex justify-content-between align-items-center articleBlock" data-block={this.state.author}>
-                  {art.titleEn} by: {art.author} 
-                  <span className="badge badge-primary editBtn hvr-pulse"><EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} /></span>
-                  <span className="badge badge-primary editBtn hvr-pulse"><DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} /></span>
+                  <div className="col-sm-8">
+                    {`${art.titleEn} 
+                    by: ${art.author}`}
+                  </div>
+                  <div className="col-sm-4">
+                    <span className="badge badge-primary editBtn hvr-pulse float-right"><EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} /></span>
+                    <span className="badge badge-primary editBtn hvr-pulse float-right"><DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} /></span>
+                  </div>
                 </li>
               ))}
             </ul>
