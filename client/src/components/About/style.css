@@ -1,0 +1,49 @@
+/* .firstRow{
+    margin-top: 160px;
+}
+
+.image1{
+    position: relative;
+}
+.postTitle{
+    font-size: 28px;
+    position: relative;
+    bottom: 70px;
+    left: 30%;
+    background: white;
+    padding: 10px;
+    text-align: right;
+    display: inline-block
+} */
+
+.aboutPage{
+    margin-top: 160px;
+}
+.aboutTitle{
+    font-weight: bolder;
+    /* text-decoration: underline  overline solid red; */
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    position: relative;
+    
+}
+.aboutTitle:after {
+    content: '';
+    width: 13%;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: red;
+}
+.theProject{
+    font-weight: bold;
+    color: rgb(70,70,70);
+}
+.paragraphText{
+    font-size: 18px;
+    line-height: 1.5;
+}

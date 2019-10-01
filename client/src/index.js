@@ -5,7 +5,8 @@ import App from "./App";
 import Stories from "./components/Stories";
 import Stories2 from "./components/Stories2";
 import Articles from "./components/Articles";
-import registerServiceWorker from "./registerServiceWorker";
+import About from "./components/About";
+// import registerServiceWorker from "./registerServiceWorker";
 
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -19,6 +20,7 @@ ReactDOM.render(
                 <Route exact path="/" component={Articles} />
                 <Route path="/stories1/:id" component={Stories} />
                 <Route path="/stories2/:id" component={Stories2} />
+                <Route exact path="/about" component={About} />
                 <Route exact path="/admin" component={App} />
                 <Route component={Articles} />
             </Switch>

@@ -104,7 +104,7 @@ class Stories2 extends Component {
             <section className="cd-section">
 
               <div className="container">
-                <ReactPlayer url={this.state.videoUrl} />
+                {this.state.videoUrl.length !== 0 ? <ReactPlayer url={this.state.videoUrl} /> : null}
                 <h5>{this.state.articles.contentEn2}</h5>
               </div>
             </section>

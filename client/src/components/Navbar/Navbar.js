@@ -21,7 +21,7 @@ function Navbar(props) {
                             </Link>
                         </li>
                         <li class="nav-item">
-                            <Link smooth to="/stories2">
+                            <Link smooth to="/about">
                                 <div className="navMenu" id="navPort" data-toggle="collapse" data-target=".navbar-collapse.show">Who We Are</div>
                             </Link>
                         </li>
