@@ -18,6 +18,9 @@
 
   .editBtn{
     margin: 2px;
+    width: 100%;
+    padding: 6px;
+    
   }
 
    /* Pulse */

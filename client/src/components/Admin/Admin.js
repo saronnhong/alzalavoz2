@@ -281,13 +281,13 @@ class Admin extends Component {
             <ul className="list-group">
               {this.state.articles.map(art => (
                 <li className="list-group-item d-flex justify-content-between align-items-center articleBlock" data-block={this.state.author}>
-                  <div className="col-sm-8">
+                  <div className="col-sm-10">
                     {`${art.titleEn} 
                     by: ${art.author}`}
                   </div>
-                  <div className="col-sm-4">
-                    <span className="badge badge-primary editBtn hvr-pulse float-right"><EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} /></span>
-                    <span className="badge badge-primary editBtn hvr-pulse float-right"><DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} /></span>
+                  <div className="col-sm-2">
+                    <span className="badge badge-primary editBtn hvr-pulse float-center"><EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} /></span>
+                    <span className="badge badge-primary editBtn hvr-pulse float-center"><DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} /></span>
                   </div>
                 </li>
               ))}
