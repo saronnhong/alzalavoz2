@@ -7,7 +7,8 @@ import "./login.css";
 class Login extends Component {
     state = {
         user: "ann",
-        password: "86"
+        password: "86",
+        id_token: "123456"
     };
 
     handleInputChange = event => {
@@ -23,7 +24,7 @@ class Login extends Component {
         axios.post('/logincheck', {user: this.state.user, password: this.state.password})
         .then(res => {
             if(res.data === true){
-                localStorage.setItem('id_token', "123456");
+                localStorage.setItem('id_token', this.state.id_token);
                 window.location = '/admin';
             }else{
                 alert("Password is incorrect. Please try again.");
@@ -36,10 +37,11 @@ class Login extends Component {
             <div className="container loginPage">
                 <div className="row">
                     <div className="col-md-6">
+                        <h2>Log In</h2>
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">User Name</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="user" value={this.state.user} onChange={this.handleInputChange} placeholder="Enter username" />
+                                <label for="exampleInputUser1">User Name</label>
+                                <input  class="form-control" id="exampleInputUser1" name="user" value={this.state.user} onChange={this.handleInputChange} placeholder="Enter username" />
                                 
                             </div>
                             <div class="form-group">

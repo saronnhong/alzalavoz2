@@ -32,17 +32,17 @@ class Admin extends Component {
     template: "1",
     showUpdateBtn: false
   };
-  componentWillMount() {
+  
+  componentDidMount() {
     if (!localStorage.getItem('id_token')) {
       window.location = '/';
+    }else{
+      this.loadArticles();
+      var date = new Date().getDate(); //Current Date
+      var month = new Date().getMonth() + 1; //Current Month
+      var year = new Date().getFullYear(); //Current Year
+      this.setState({ date: month + '/' + date + '/' + year })
     }
-  }
-  componentDidMount() {
-    this.loadArticles();
-    var date = new Date().getDate(); //Current Date
-    var month = new Date().getMonth() + 1; //Current Month
-    var year = new Date().getFullYear(); //Current Year
-    this.setState({ date: month + '/' + date + '/' + year })
   }
 
   loadArticles = () => {

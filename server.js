@@ -34,7 +34,7 @@ mongoose
 // Define API routes here
 
 app.post('/logincheck', (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   if(req.body.user == process.env.ADMIN && req.body.password == process.env.PASSWORD){
     res.send(true);
   }else{
