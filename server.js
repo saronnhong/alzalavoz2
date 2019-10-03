@@ -1,3 +1,4 @@
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
@@ -32,6 +33,15 @@ mongoose
   .catch(err => console.error(err));
 // Define API routes here
 
+app.post('/logincheck', (req, res) => {
+  console.log(req.body);
+  if(req.body.user == process.env.ADMIN && req.body.password == process.env.PASSWORD){
+    res.send(true);
+  }else{
+    res.send(false);
+  }
+  
+});
 app.post('/api/savearticle/:id', function (req, res) {
   console.log(req.body);
   db.Article.create(req.body)

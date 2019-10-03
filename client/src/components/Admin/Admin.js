@@ -32,7 +32,11 @@ class Admin extends Component {
     template: "1",
     showUpdateBtn: false
   };
-
+  componentWillMount() {
+    if (!localStorage.getItem('id_token')) {
+      window.location = '/';
+    }
+  }
   componentDidMount() {
     this.loadArticles();
     var date = new Date().getDate(); //Current Date
@@ -197,6 +201,11 @@ class Admin extends Component {
       .then(this.loadArticles());
   }
 
+  logOut = () => {
+    localStorage.removeItem('id_token');
+    window.location.reload('/');
+  }
+
   render() {
     return (
       <div className="container mainPage">
@@ -276,6 +285,7 @@ class Admin extends Component {
             </form>
             <button type="button" id="submitBtn" className="btn btn-warning" onClick={() => { this.submitForm() }}>Submit</button>
             {this.state.showUpdateBtn ? <button type="button" id="updateBtn" className="btn btn-success" onClick={() => { this.updateForm() }}>Update</button> : null}
+            <button type="button" id="submitBtn" className="btn btn-danger" onClick={() => { this.logOut() }}>Log Out</button>
           </div>
           <div className="col-md-6">
             <ul className="list-group">
