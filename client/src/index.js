@@ -5,8 +5,8 @@ import "./index.css";
 import App from "./App";
 import Stories from "./components/Stories";
 import Stories2 from "./components/Stories2";
-import Articles from "./components/Articles";
-import About from "./components/About";
+import Articles from "./pages/Articles";
+import About from "./pages/About";
 import Login from "./pages/Login";
 // import registerServiceWorker from "./registerServiceWorker";
 

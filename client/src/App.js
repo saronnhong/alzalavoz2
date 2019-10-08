@@ -7,7 +7,7 @@ import axios from 'axios';
 import API from "./utils/API";
 import DeleteBtn from "./components/DeleteBtn";
 import EditBtn from "./components/EditBtn";
-import Admin from "./components/Admin";
+import Admin from "./pages/Admin";
 
 class App extends Component {
   
