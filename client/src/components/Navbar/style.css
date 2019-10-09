@@ -67,7 +67,7 @@
 .navbar {
     opacity: .95;
     background-image: url("./alza_header.jpeg");
-    background-size: auto;
+    background-size: 100%;
 
 }
 
