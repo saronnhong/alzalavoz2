@@ -54,8 +54,8 @@ class Articles extends Component {
               <div className="col-md-6">
                 <Link to={"/stories" + art.template + "/" + art._id} >
                   <div className="imageContainer">
-                    <img data-template={art.template} className="image1" height="300px" src={art.imageUrl1} />
-                    <div className="postTitle">{art.titleEn}</div>
+                    <img data-template={art.template} className="image1" width ="450px" height="300px" src={art.imageUrl1} />
+                    <div className="postTitle hvr-float">{art.titleEn}</div>
                   </div>
                 </Link>
               </div>
