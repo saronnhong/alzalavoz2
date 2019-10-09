@@ -9,7 +9,7 @@ function Navbar(props) {
             <nav className="navbar navbar-dark bg-dark fixed-top navbar-expand-sm" id="nav1">
             
                 <Link smooth to="/login">
-                    <img height = "100px" src={require('./shoes.jpeg')} />
+                    <img height = "100px" src={require('./banana.jpeg')} />
                     {/* <div className="navbar-brand" > Alza La Voz</div> */}
                 </Link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
