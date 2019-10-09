@@ -14,6 +14,8 @@ const bodyParser = require('body-parser');
 //   res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization');
 //   next();
 // });
+const cors = require('cors'); //needed to disable sendgrid security
+app.use(cors()); //utilize Cors so the browser doesn't restrict data, without it Sendgrid will not send!
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -31,7 +33,22 @@ mongoose
   .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/alzaDB', { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.error(err));
+  
 // Define API routes here
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+app.post("/send-email", function(req, res) {
+  
+  const msg = {
+    to: req.body.email.sender,
+    from: req.body.email.recipient,
+    subject: req.body.email.subject,
+    html: "FROM: " + req.body.email.from + "\n" + req.body.email.text,
+  };
+  sgMail.send(msg)
+  .then((msg) => res.send("Email has been sent."));
+})
 
 app.post('/logincheck', (req, res) => {
   // console.log(req.body);

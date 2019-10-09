@@ -8,6 +8,9 @@ import Stories2 from "./components/Stories2";
 import Articles from "./pages/Articles";
 import About from "./pages/About";
 import Login from "./pages/Login";
+import Contact from "./pages/Contact";
+
+
 // import registerServiceWorker from "./registerServiceWorker";
 
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
@@ -25,6 +28,7 @@ ReactDOM.render(
                 <Route exact path="/about" component={About} />
                 <Route exact path="/admin" component={App} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/contact" component={Contact} />
                 <Route component={Articles} />
             </Switch>
 
