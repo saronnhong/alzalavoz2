@@ -87,7 +87,7 @@ class Admin extends Component {
       contentEn5: this.state.contentEn5,
       contentEsp5: this.state.contentEsp4,
       template: this.state.template
-      
+
     })
       .then(this.setState({
         titleEn: "",
@@ -141,7 +141,7 @@ class Admin extends Component {
       contentEn5: this.state.contentEn5,
       contentEsp5: this.state.contentEsp4,
       template: this.state.template
-      
+
     })
       .then(this.setState({
         titleEn: "",
@@ -213,136 +213,120 @@ class Admin extends Component {
   }
 
   newArticle = () => {
-    this.setState({showForm: true, showTable: false});
+    this.setState({ showForm: true, showTable: false });
   }
 
   render() {
     return (
       <div className="container mainPage">
-{this.state.showTable ?
-        <div className="row">
-          <table className="table table-striped table-bordered" >
-            <thead className="thead-dark">
-              <tr >
-                <th scope="col" width="5%">Template</th>
-                <th scope="col" width="40%">Title</th>
-                <th scope="col" >Author</th>
-                <th scope="col" >Date</th>
-                <th scope="col" ></th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.articles.map(art => (
-                <tr>
-                  <td className="templateCol">{art.template}</td>
-                  <td>{art.titleEn}</td>
-                  <td>{art.author}</td>
-                  <td className="dateCol">{art.date}</td>
-                  <td className="editCol"><EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} /> <DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} /></td>
+        {this.state.showTable ?
+          <div className="row">
+            <table className="table table-striped table-bordered" >
+              <thead className="thead-dark">
+                <tr >
+                  <th scope="col" className="templateCol" width="5%">Template</th>
+                  <th scope="col" className="titleCol" width="40%">Title</th>
+                  <th scope="col" className="authorCol">Author</th>
+                  <th scope="col" className="dateCol">Date</th>
+                  <th scope="col" ></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-          <button type="button" class="btn btn-success" onClick={()=> this.newArticle()}>New Article</button>
-        </div> : null}
-{this.state.showForm ? 
-        <div className="row">
-          <div className="col-md-6">
-            <form>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01">Template</label>
-                </div>
-                <select class="custom-select" id="inputGroupSelect01" name="template" value={this.state.template} onChange={this.handleInputChange}>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                </select>
-              </div>
+              </thead>
+              <tbody>
+                {this.state.articles.map(art => (
+                  <tr>
+                    <td className="templateCol">{art.template}</td>
+                    <td>{art.titleEn}</td>
+                    <td>{art.author}</td>
+                    <td className="dateCol">{art.date}</td>
+                    <td className="editCol"><EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} /> <DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} /></td>
 
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Title*" name="titleEn" value={this.state.titleEn} onChange={this.handleInputChange} />
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Title* [esp]" name="titleEsp" value={this.state.titleEsp} onChange={this.handleInputChange} />
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Author*" name="author" value={this.state.author} onChange={this.handleInputChange} />
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Date*" name="date" value={this.state.date} onChange={this.handleInputChange} />
-              </div>
-              <div className="form-group">
-                <input type="url" className="form-control" placeholder="Image URL*" name="imageUrl1" value={this.state.imageUrl1} onChange={this.handleInputChange} />
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 2" name="imageUrl2" value={this.state.imageUrl2} onChange={this.handleInputChange} /> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 3" name="imageUrl3" value={this.state.imageUrl3} onChange={this.handleInputChange} /> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 4" name="imageUrl4" value={this.state.imageUrl4} onChange={this.handleInputChange} /> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 5" name="imageUrl5" value={this.state.imageUrl5} onChange={this.handleInputChange} /> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Video Url" name="videoUrl" value={this.state.videoUrl} onChange={this.handleInputChange} /> : null}
-              </div>
-              <div className="form-group">
-                <textarea className="form-control" placeholder="Content [en]*" rows="8" name="contentEn1" value={this.state.contentEn1} onChange={this.handleInputChange}></textarea>
-              </div>
-              <div className="form-group">
-                <textarea className="form-control" placeholder="Content [esp]*" rows="8" name="contentEsp1" value={this.state.contentEsp1} onChange={this.handleInputChange}></textarea>
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 2 [en]" rows="8" name="contentEn2" value={this.state.contentEn2} onChange={this.handleInputChange}></textarea> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 2 [esp]" rows="8" name="contentEsp2" value={this.state.contentEsp2} onChange={this.handleInputChange}></textarea> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 3 [en]" rows="8" name="contentEn3" value={this.state.contentEn3} onChange={this.handleInputChange}></textarea> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 3 [esp]" rows="8" name="contentEsp3" value={this.state.contentEsp3} onChange={this.handleInputChange}></textarea> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 4 [en]" rows="8" name="contentEn4" value={this.state.contentEn4} onChange={this.handleInputChange}></textarea> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 4 [esp]" rows="8" name="contentEsp4" value={this.state.contentEsp4} onChange={this.handleInputChange}></textarea> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 5 [en]" rows="8" name="contentEn5" value={this.state.contentEn5} onChange={this.handleInputChange}></textarea> : null}
-              </div>
-              <div className="form-group">
-                {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 5 [esp]" rows="8" name="contentEsp5" value={this.state.contentEsp5} onChange={this.handleInputChange}></textarea> : null}
-              </div>
-            </form>
-            <button type="button" id="submitBtn" className="btn btn-warning" onClick={() => { this.submitForm() }}>Submit</button>
-            {this.state.showUpdateBtn ? <button type="button" id="updateBtn" className="btn btn-success" onClick={() => { this.updateForm() }}>Update</button> : null}
-            <button type="button" id="submitBtn" className="btn btn-danger" onClick={() => { this.logOut() }}>Log Out</button>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button type="button" class="btn btn-success" onClick={() => this.newArticle()}>New Article</button>
+          </div> : null}
+        {this.state.showForm ?
+          <div className="row">
+            <div className="col-md-6">
+              <form>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Template</label>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect01" name="template" value={this.state.template} onChange={this.handleInputChange}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Title*" name="titleEn" value={this.state.titleEn} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Title* [esp]" name="titleEsp" value={this.state.titleEsp} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Author*" name="author" value={this.state.author} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Date*" name="date" value={this.state.date} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                  <input type="url" className="form-control" placeholder="Image URL*" name="imageUrl1" value={this.state.imageUrl1} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 2" name="imageUrl2" value={this.state.imageUrl2} onChange={this.handleInputChange} /> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 3" name="imageUrl3" value={this.state.imageUrl3} onChange={this.handleInputChange} /> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 4" name="imageUrl4" value={this.state.imageUrl4} onChange={this.handleInputChange} /> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Image URL 5" name="imageUrl5" value={this.state.imageUrl5} onChange={this.handleInputChange} /> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <input type="url" className="form-control" placeholder="Video Url" name="videoUrl" value={this.state.videoUrl} onChange={this.handleInputChange} /> : null}
+                </div>
+                <div className="form-group">
+                  <textarea className="form-control" placeholder="Content [en]*" rows="8" name="contentEn1" value={this.state.contentEn1} onChange={this.handleInputChange}></textarea>
+                </div>
+                <div className="form-group">
+                  <textarea className="form-control" placeholder="Content [esp]*" rows="8" name="contentEsp1" value={this.state.contentEsp1} onChange={this.handleInputChange}></textarea>
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 2 [en]" rows="8" name="contentEn2" value={this.state.contentEn2} onChange={this.handleInputChange}></textarea> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 2 [esp]" rows="8" name="contentEsp2" value={this.state.contentEsp2} onChange={this.handleInputChange}></textarea> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 3 [en]" rows="8" name="contentEn3" value={this.state.contentEn3} onChange={this.handleInputChange}></textarea> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 3 [esp]" rows="8" name="contentEsp3" value={this.state.contentEsp3} onChange={this.handleInputChange}></textarea> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 4 [en]" rows="8" name="contentEn4" value={this.state.contentEn4} onChange={this.handleInputChange}></textarea> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 4 [esp]" rows="8" name="contentEsp4" value={this.state.contentEsp4} onChange={this.handleInputChange}></textarea> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 5 [en]" rows="8" name="contentEn5" value={this.state.contentEn5} onChange={this.handleInputChange}></textarea> : null}
+                </div>
+                <div className="form-group">
+                  {this.state.template === "2" ? <textarea className="form-control" placeholder="Content 5 [esp]" rows="8" name="contentEsp5" value={this.state.contentEsp5} onChange={this.handleInputChange}></textarea> : null}
+                </div>
+              </form>
+              <button type="button" id="submitBtn" className="btn btn-warning" onClick={() => { this.submitForm() }}>Submit</button>
+              {this.state.showUpdateBtn ? <button type="button" id="updateBtn" className="btn btn-success" onClick={() => { this.updateForm() }}>Update</button> : null}
+              <button type="button" id="submitBtn" className="btn btn-danger" onClick={() => { this.logOut() }}>Log Out</button>
+            </div>
           </div>
-          
-          {/* <div className="col-md-6">
-            <ul className="list-group">
-              {this.state.articles.map(art => (
-                <li className="list-group-item d-flex justify-content-between align-items-center articleBlock" data-block={this.state.author}>
-                  <div className="col-sm-10">
-                    {`${art.titleEn} 
-                    by: ${art.author}`}
-                  </div>
-                  <div className="col-sm-2">
-                    <span className="badge badge-primary editBtn hvr-pulse float-center"><EditBtn data-id={art._id} onClick={() => this.editButton(art._id)} /></span>
-                    <span className="badge badge-primary editBtn hvr-pulse float-center"><DeleteBtn data-id={art._id} onClick={() => this.deleteButton(art._id)} /></span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-        </div>
-: null }
+          : null}
       </div>
     );
   }

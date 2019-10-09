@@ -5,7 +5,7 @@ import "./style.css";
 // That way we don't have to define them all individually
 function EditBtn(props) {
   return (
-    <span className="edit-btn" {...props} role="button" tabIndex="0">
+    <span className="edit-btn hvr-pulse" {...props} role="button" tabIndex="0">
       <i class="far fa-edit"></i>
     </span>
   );
