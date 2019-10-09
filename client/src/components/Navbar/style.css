@@ -1,8 +1,6 @@
 
 .navMenu{
     color: white;
-
-    
 }
 /* #navAbout:hover{
     text-decoration: none;
@@ -68,6 +66,9 @@
 }
 .navbar {
     opacity: .95;
+    background-image: url("./alza_header.jpeg");
+    background-size: auto;
+
 }
 
 .navbar-collapse {
@@ -83,7 +84,9 @@
     margin-left: 3rem;
 }
 
-
+.navTop{
+    background-image: url("./alza_header.jpeg");
+}
 
 @media only screen and (max-width: 600px) {
     #navAbout:hover::after, #navPort:hover::after, #navContact:hover::after  {

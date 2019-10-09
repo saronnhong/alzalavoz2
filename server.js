@@ -43,8 +43,8 @@ app.post("/send-email", function(req, res) {
   const msg = {
     to: req.body.email.sender,
     from: req.body.email.recipient,
-    subject: req.body.email.subject,
-    html: "FROM: " + req.body.email.from + "\n" + req.body.email.text,
+    subject: req.body.email.subject + " has sent you a message",
+    html: "MESSAGE: " + req.body.email.text +"<br><br> FROM: " + req.body.email.from,
   };
   sgMail.send(msg)
   .then((msg) => res.send("Email has been sent."));
