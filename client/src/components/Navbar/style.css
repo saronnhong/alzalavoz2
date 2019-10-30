@@ -107,7 +107,7 @@
         /* margin-left: 10px; */
     }
     .secondRowBox{
-        /* padding: 2px 0; */
+        padding: 5px;
         margin: 0px;
         
     }
@@ -117,7 +117,7 @@
         font-size: 9px;
     }
     .navMenu{
-        font-size: 9px;
+        /* font-size: 9px; */
         
     }
     .navMenuItems{
