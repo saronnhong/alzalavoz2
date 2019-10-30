@@ -7,7 +7,7 @@ function Navbar(props) {
     return (
         <div className="navTop d-flex flex-column">
             <nav className="p-2 navbar navbar-dark bg-dark fixed-top navbar-expand-sm container-fluid" id="nav1">
-                <div className="row dflex">
+                <div className="row rowNav dflex">
                     <Link smooth to="/login">
                         <div className="navbar-brand" >
                             ALZA<br />LA<br />VOZ

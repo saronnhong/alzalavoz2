@@ -17,7 +17,7 @@
     
     
 }
-.row{
+.rowNav{
     width: 100vw;
 }
 #navAbout::after, #navPort::after, #navContact::after, #stories::after {
