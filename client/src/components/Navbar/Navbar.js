@@ -35,7 +35,7 @@ class Navbar extends React.Component {
                             <div className="quote ">{this.state.quote}</div>
                         </div>
                         <form class="form-inline searchBox">
-                            <input class="form-control mr-sm-2 searchInput" type="search" placeholder="Search" aria-label="Search" />
+                            <input class="form-control mr-sm-2 searchInput my-auto" type="search" placeholder="Search" aria-label="Search" />
                             {this.state.hideSearchBtn ? null : <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>};
                         </form>
                     </div>
