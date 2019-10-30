@@ -123,9 +123,24 @@
     padding-right: 0;
     padding-left: 0;
 } */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 450px) {
     #navAbout:hover::after, #navPort:hover::after, #navContact:hover::after  {
         
         visibility: hidden;
+    }
+    .secondRow{
+        margin-top: 12em;
+        border: none;
+    }
+    .searchInput{
+        width: 50%;
+        margin-left: 13px;
+    }
+    .searchBox{
+        margin-left: 10px;
+    }
+    .secondRowBox{
+        padding: 5px;
+        margin: 0;
     }
   }
