@@ -27,7 +27,7 @@ class Navbar extends React.Component {
                 <nav className="p-2 navbar navbar-dark bg-dark fixed-top navbar-expand-sm container-fluid" id="nav1">
                     <div className="row rowNav dflex">
                         <Link smooth to="/login">
-                            <div className="navbar-brand" >
+                            <div className="navbar-brand alzaLogo" >
                                 ALZA<br />LA<br />VOZ
                             </div>
                         </Link>
