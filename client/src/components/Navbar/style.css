@@ -98,7 +98,7 @@
     .secondRow{
         /* margin-top: 4em; */
         border: none;
-        padding: 0;
+        padding: 5px 0;
         margin: 0 0 0 0;
         z-index: 9999;
     }

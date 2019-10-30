@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     }
 
     handleWindowResize = () => {
-        this.setState({ isMobile: true, quote: " ", hideSearchBtn: true });
+        this.setState({ isMobile: true, quote: "Alza La Voz", hideSearchBtn: true });
     }
 
     componentDidMount() {

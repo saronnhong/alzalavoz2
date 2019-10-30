@@ -38,3 +38,12 @@
     -webkit-transform: translateY(-8px);
     transform: translateY(-8px);
   }
+
+  @media only screen and (max-width: 800px) {
+    .firstRow{
+        margin-top: 100px;
+    }
+    .imageContainer{
+        width: 80%;
+    }
+  }
