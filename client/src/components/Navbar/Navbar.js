@@ -15,10 +15,10 @@ class Navbar extends React.Component {
     }
 
     componentDidMount() {
-        if(window.innerWidth < 600){
+        if (window.innerWidth < 600) {
             this.handleWindowResize();
         }
-        
+
     }
 
     render() {
@@ -40,10 +40,42 @@ class Navbar extends React.Component {
                         </form>
                     </div>
                 </nav>
-                <nav className="navbar navbar-dark bg-dark fixed-top navbar-expand-sm container-fluid secondRow" id="nav1">
-                    {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark secondRow">
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                    </button> */}
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item secondRowBox">
+                                <Link smooth to="/">
+                                    <div className="navMenu" id="stories" data-toggle="collapse" data-target=".navbar-collapse.show">Stories</div>
+                                </Link>
+                            </li>
+                            <li class="nav-item secondRowBox">
+                                <Link smooth to="/about">
+                                    <div className="navMenu" id="navPort" data-toggle="collapse" data-target=".navbar-collapse.show">Who We Are</div>
+                                </Link>
+                            </li>
+                            <li class="nav-item secondRowBox">
+                                <Link smooth to="/contact">
+                                    <div className="navMenu" id="navContact" data-toggle="collapse" data-target=".navbar-collapse.show">Share Your Story</div>
+                                </Link>
+                            </li>
+                            <li class="nav-item secondRowBox">
+                                <Link smooth to="/contact">
+                                    <div className="navMenu" id="navContact" data-toggle="collapse" data-target=".navbar-collapse.show">Contact Us</div>
+                                </Link>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+                {/* <nav className="navbar navbar-dark bg-dark fixed-top navbar-expand-sm container-fluid secondRow" id="nav1">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div id="navbarNav">
                         <ul class="navMenuItems">
 
@@ -72,7 +104,7 @@ class Navbar extends React.Component {
                             </li>
                         </ul>
                     </div>
-                </nav>
+                </nav> */}
             </div>
         );
     }
