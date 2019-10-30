@@ -106,10 +106,11 @@
     .searchBox{
         /* margin-left: 10px; */
     }
-    /* .secondRowBox{
-        padding: 0px;
-        margin: 0;
-    } */
+    .secondRowBox{
+        /* padding: 2px 0; */
+        margin: 0px;
+        
+    }
     .navbar-brand{
         /* margin-left: 40vw; */
         padding: .25em .55em;
