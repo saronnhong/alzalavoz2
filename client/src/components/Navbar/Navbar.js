@@ -24,7 +24,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <div className="navTop d-flex flex-column">
-                <nav className="p-2 navbar navbar-dark bg-dark fixed-top navbar-expand-sm container-fluid" id="nav1">
+                {this.state.isMobile ? null : <nav className="p-2 navbar navbar-dark bg-dark fixed-top navbar-expand-sm container-fluid" id="nav1">
                     <div className="row rowNav dflex">
                         <Link smooth to="/login">
                             <div className="navbar-brand alzaLogo" >
@@ -39,9 +39,13 @@ class Navbar extends React.Component {
                             {this.state.hideSearchBtn ? null : <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>};
                         </form>
                     </div>
-                </nav>
+                </nav>}
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark secondRow fixed-top container-fluid">
-                    
+                    {this.state.isMobile ? <Link smooth to="/login">
+                        <div className="navbar-brand alzaLogo" >
+                            ALZA<br />LA<br />VOZ
+                            </div>
+                    </Link>: null}
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
