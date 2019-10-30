@@ -21,6 +21,7 @@ ReactDOM.render(
     <Router>
         <div>
             <Navbar />
+            
             <Switch>
                 <Route exact path="/" component={Articles} />
                 <Route path="/stories1/:id" component={Stories} />
