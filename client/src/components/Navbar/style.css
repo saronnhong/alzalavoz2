@@ -123,18 +123,18 @@
     padding-right: 0;
     padding-left: 0;
 } */
-@media only screen and (max-width: 450px) {
-    #navAbout:hover::after, #navPort:hover::after, #navContact:hover::after  {
+@media only screen and (max-width: 800px) {
+    #navAbout:hover::after, #navPort:hover::after, #navContact:hover::after, .quote  {
         
         visibility: hidden;
     }
     .secondRow{
-        margin-top: 12em;
+        /* margin-top: em; */
         border: none;
     }
     .searchInput{
         width: 50%;
-        margin-left: 13px;
+        /* margin-left: 13px; */
     }
     .searchBox{
         margin-left: 10px;
@@ -142,5 +142,8 @@
     .secondRowBox{
         padding: 5px;
         margin: 0;
+    }
+    .navbar-brand{
+        margin-left: 40vw;
     }
   }

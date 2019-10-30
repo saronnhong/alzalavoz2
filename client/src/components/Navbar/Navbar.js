@@ -13,11 +13,11 @@ function Navbar(props) {
                             ALZA<br />LA<br />VOZ
                             </div>
                     </Link>
-                    <div className="my-auto mr-auto searchBox">
+                    <div className="my-auto mr-auto ">
                         <div className="quote ">"Raise Your Voice"</div>
                     </div>
                     <form class="form-inline searchBox">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                        <input class="form-control mr-sm-2 searchInput" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
