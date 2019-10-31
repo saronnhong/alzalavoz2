@@ -52,22 +52,22 @@ class Articles extends Component {
           <div className="row firstRow">
             {this.state.articles.map(art =>
               <div className="col-md-4">
+                <Link to={"/stories" + art.template + "/" + art._id} >
+                  <div className="card cardClass hvr-float-shadow" >
 
-                <div className="card cardClass hvr-float-shadow" >
-                  <Link to={"/stories" + art.template + "/" + art._id} >
                     <img data-template={art.template} className="image1" src={art.imageUrl1} className="card-img-top" alt="..." />
-                  </Link>
-                  <div className="card-body">
-                    <p className="card-text cardText">{art.titleEn}</p>
-                  </div>
-                </div>
 
+                    <div className="card-body">
+                      <p className="card-text cardText">{art.titleEn}</p>
+                    </div>
+                  </div>
+                </Link>
               </div>
-              
+
             )}
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }
