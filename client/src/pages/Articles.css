@@ -51,6 +51,12 @@
 .cardClass{
     margin-bottom: 1em;
 }
+.cardText{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
   @media only screen and (max-width: 800px) {
     .firstRow{
         margin-top: 100px;
