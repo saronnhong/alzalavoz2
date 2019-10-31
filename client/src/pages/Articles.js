@@ -51,14 +51,19 @@ class Articles extends Component {
         <div className="container">
           <div className="row firstRow">
             {this.state.articles.map(art =>
-              <div className="col-md-6">
-                <Link to={"/stories" + art.template + "/" + art._id} >
-                  <div className="imageContainer">
-                    <img data-template={art.template} className="image1" width ="450px" height="300px" src={art.imageUrl1} />
-                    <div className="postTitle hvr-float">{art.titleEn}</div>
+              <div className="col-md-4">
+
+                <div className="card cardClass hvr-float-shadow" >
+                  <Link to={"/stories" + art.template + "/" + art._id} >
+                    <img data-template={art.template} className="image1" src={art.imageUrl1} className="card-img-top" alt="..." />
+                  </Link>
+                  <div className="card-body">
+                    <p className="card-text cardText">{art.titleEn}</p>
                   </div>
-                </Link>
+                </div>
+
               </div>
+              
             )}
           </div>
         </div>

@@ -11,14 +11,13 @@ class Navbar extends React.Component {
     }
 
     handleWindowResize = () => {
-        this.setState({ isMobile: true, quote: "Alza La Voz", hideSearchBtn: true });
+        this.setState({ isMobile: true, quote: " ", hideSearchBtn: true });
     }
 
     componentDidMount() {
         if (window.innerWidth < 600) {
             this.handleWindowResize();
         }
-
     }
 
     render() {
